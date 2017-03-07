@@ -1,0 +1,10 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+{% set item = get_context('item') %}
+{% set path_set = addTwigPath( "applications.Surveys.generalviews.question") %}
+
+{% include "question.new.form.twig" ignore missing %}
+
+{{ forms.input('id', 'hidden', item.id, null, 'question_id') }}

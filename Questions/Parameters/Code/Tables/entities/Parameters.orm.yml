@@ -1,0 +1,51 @@
+Surveys\Questions\Parameters\Code\Tables\Parameters:
+  table: surveys_questions_parameters
+  type: entity
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    question_id:
+      name: question_id
+      type: integer
+      length: 11
+      nullable: false
+    label:
+      name: label
+      type: string
+      length: 255
+      nullable: true
+    image:
+      name: image
+      type: integer
+      length: 11
+      nullable: true
+    created_by:
+      name: created_by
+      type: integer
+      length: 11
+      nullable: false
+    date_created:
+      name: date_created
+      type: datetime
+      nullable: false
+    modified_by:
+      name: modified_by
+      type: integer
+      length: 11
+      nullable: false
+    date_modified:
+      name: date_modified
+      type: datetime
+      nullable: false
+  indexes:
+    question_id_index:
+      columns: [question_id]
+  lifecycleCallbacks:
+    prePersist:
+      - onPrePersist
+      - onPrePersistCallbacks
+    preUpdate:
+      - onPreUpdate
+      - onPreUpdateCallbacks

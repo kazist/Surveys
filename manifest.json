@@ -1,0 +1,9 @@
+{
+    "name": "surveys",
+    "title": "Surveys and Polls",
+    "icon": "icons\/surveys.png",
+    "extension": "component",
+    "path": "surveys\/",
+    "description": "Surveys and Polls",
+    "version": 1
+}

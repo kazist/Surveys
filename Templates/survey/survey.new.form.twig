@@ -1,0 +1,64 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+{% set params = {  'survey_id': survey_id} %}
+{% set survey = callFunction( "Survey.Components.Survey.Models.SurveyModel", 'getSurvey', params ) %}
+{% set nooftakes = callFunction( "Survey.Components.Survey.Models.SurveyModel", 'getSurveyNoOfTakes', params ) %}
+
+{{ set_assets('applications/Survey/Components/assets/css/survey.css') }}
+{{ set_assets('applications/Survey/Components/assets/css/question.css') }}
+
+{{ set_assets('applications/Survey/Components/assets/js/survey.js') }}
+{{ set_assets('applications/Survey/Components/assets/js/question.js') }}
+
+<div class="survey-form">
+
+    {% if survey_id or not hide_on_new %}
+
+        {{ forms.input('title', 'text', survey.title, 'Title') }}
+        {{ forms.input('description', 'textarea', survey.description, 'Description') }}
+        {{ forms.input('no_of_takes', 'select', survey.no_of_takes, 'No of Takes', null, null, null, null, nooftakes) }}
+
+        {% if not survey_id %}
+
+            <a class="btn btn-primary btn-xs btn-flat save-survey">
+                <i class="fa fa-plus"></i> Save Survey
+            </a>
+            <br>
+            <hr>
+
+        {% else %}
+
+            <a class="btn btn-success btn-xs btn-flat survey-add-new">
+                <i class="fa fa-plus"></i> Add New Question
+            </a>
+            <a class="btn btn-primary btn-xs btn-flat survey-add-existing">
+                <i class="fa fa-plus"></i> Add Existing Question
+            </a>
+
+            <div class="survey-question-form">
+                <b>Survey Question Form</b>
+            </div>
+
+
+            <div class="survey-questions">
+                {% include "survey.list.question.twig" ignore missing with {'survey_id': survey_id} %}
+            </div>
+        {% endif %}
+    {% else %}
+
+        <a class="btn btn-success btn-xs btn-flat show-survey-form">
+            <i class="fa fa-plus"></i> Show Survey Form
+        </a>
+        <br>
+        <hr>
+
+    {% endif %}
+
+</div>
+
+
+
+
+

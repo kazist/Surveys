@@ -1,0 +1,56 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 24, 2015, 2:12:05 PM
+    Author     : sbc
+*/
+
+
+.survey-rate{
+    background: #DDD;
+    width: auto;
+}
+
+.survey-rate .survey-rate-title{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.survey-rate .survey-rate-item{
+    background: white;
+    text-align: center;
+    border:2px solid #ccc;
+}
+
+.survey-rate .survey-rate-item .survey-rate-item-percent{
+    text-align: center;
+    font-size:20px;
+}
+
+.survey-rate .survey-rate-item:hover{
+    border:2px solid #f15d22;
+    cursor: pointer;
+    background: #ffd6d6;
+}
+
+.survey-rate-rated{
+    color:red;
+}
+
+.survey-survey{
+    border:2px dotted #DDD;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.survey-survey .survey-question{
+    border-bottom:1px dotted #ddd;
+    padding:5px;
+    margin-bottom:5px;
+}
+
+

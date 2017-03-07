@@ -1,0 +1,47 @@
+
+{{ set_assets('applications/Surveys/assets/css/ratesurvey.css') }}
+
+{{ set_assets('assets/js/highcharts/highcharts.js') }}
+{{ set_assets('assets/js/kazist/kazist_chart.js') }}
+{{ set_assets('applications/Surveys/assets/js/takesurvey.js') }}
+
+{% set parameters = {'survey_id':survey_id, 'show_result':show_result} %}
+{% set path_set = addTwigPath("applications.Surveys.generalviews.survey") %}
+{% set survey = callFunction( "Surveys.Surveys.Code.Models.SurveysModel", 'getSurveyNQuestions', parameters ) %}
+{% set is_form = true %}
+{% set can_take = true %}
+
+{% if show_result %}
+    {% set is_form = false %}
+{% endif %}
+
+{% if is_form and survey.no_of_takes %}
+    {% if is_form and survey.total_takes >= survey.no_of_takes %}
+        {% set is_form = false %}
+        {% set can_take = false %}
+    {% endif %}   
+{% endif %}
+
+{% if not can_take %}
+    <div class="alert alert-danger">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close" title=' You have Reached the Maximum  takes for this survey' >&times;</a>
+        You have Reached the Maximum  takes for this survey.({{ survey.no_of_takes }} Takes Allowed From One User.)
+    </div>
+{% endif %}
+
+<div class="take-survey-form">
+
+    {% if is_form %}
+        <a class="btn btn-success btn-flat btn-xs survey-view-result" survey_id="{{ survey_id }}">View Result</a>
+    {% elseif(can_take) %}
+        <a class="btn btn-success btn-flat btn-xs survey-view-form" survey_id="{{ survey_id }}">View Question</a>
+    {% endif %}
+
+    {% if is_form %}
+        {% include "user.survey.form.twig" ignore missing with parameters %}
+    {% else %}
+        {% include "user.survey.result.twig" ignore missing with parameters %}
+    {% endif %}
+
+</div>
+

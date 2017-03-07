@@ -1,0 +1,44 @@
+{{ set_assets('applications/Surveys/assets/css/ratesurvey.css') }}
+{{ set_assets('applications/Surveys/assets/js/rateitem.js') }}
+
+{% set parameters = {'item_id':item.id, 'rate_id':1 } %}
+
+{% set rate = callFunction( "Surveys.Rates.Code.Models.RatesModel", 'getRate', parameters ) %}
+{% set kazi_url = callFunction( "Surveys.Rates.Code.Models.RatesModel", 'getKaziUrl' ) %}
+
+<div class="survey-rate" rate_id="{{ rate.id }}" app_id="{{ kazi_url.app_id }}" com_id="{{ kazi_url.com_id }}" subset_id="{{ kazi_url.subset_id }}">
+    <div class="survey-rate-title">
+        What do you think of this post?
+    </div>
+    <div class="survey-rate-items">
+        {% if rate.options|length > 0 %}
+
+            {% for option in rate.options %}
+                <div class="col-sm-{{ 12/rate.options|length | number_format()  }}">
+                    <div class="survey-rate-item" option_id="{{ option.id }}">
+                        <div class="survey-rate-item-percent" >
+                            {% if rate.total_votes %}
+                                {{ (option.option_votes/rate.total_votes*100) | number_format() }}
+                            {% else %}
+                                0
+                            {% endif %}
+                            %
+                        </div>
+                        {{ option.option }}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+    <div class="clearfix"></div>
+
+    {% if rate.has_rated %}
+        <div class="survey-rate-rated">
+            Your have Already Rated This!
+        </div>
+    {% endif %}
+
+    <br>
+</div>
+

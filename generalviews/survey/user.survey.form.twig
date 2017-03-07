@@ -1,0 +1,27 @@
+
+{% import "form.macro.twig" as forms %}
+
+<div class="survey-survey">
+    <h4>{{ survey.title }}</h4>
+    <input class="survey_id" name="survey[id]" type="hidden" value="{{ survey.id }}" >
+    <div class="survey-questions">
+        {% if survey.questions|length > 0 %}
+            {% for question in survey.questions %}
+                <div class="survey-question">
+                    <b> {{ question.question }}</b><br>
+                    {% if question.parameters|length > 0 %}
+                        <input name="survey[question][{{ question.id }}][type]" type="hidden" value="{{ question.type }}" >
+                        {% for parameter in question.parameters%}
+                            <input name="survey[question][{{ question.id }}][answer][]" type="radio" value="{{ parameter.id }}"> {{ parameter.label }}<br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+            {% endfor %}
+        {% endif %}
+        
+  {{ forms.input('_token' ) }} 
+
+    </div>
+    <a class="btn btn-warning btn-flat btn-xs submit-survey-result">Submit Survey</a>
+</div>

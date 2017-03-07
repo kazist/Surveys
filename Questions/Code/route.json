@@ -1,0 +1,235 @@
+{
+    "frontend": [{
+            "title": "Survey List",
+            "description": "Management of Surveys.",
+            "controller": "Surveys\\Questions\\Code\\Controllers\\QuestionsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "surveys.questions",
+            "route": "surveys/questions",
+            "arguments": "",
+            "keywords": "survey, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view"],
+                "ADMIN": ["can_view"],
+                "MODERATOR": ["can_view"],
+                "USER": ["can_view"]
+            }
+        }, {
+            "title": "Survey Detail: {{ item.name }}",
+            "description": "Survey Detail: {{ item.name }}",
+            "controller": "Surveys\\Questions\\Code\\Controllers\\QuestionsController::detailAction",
+            "unique_name": "surveys.questions.detail",
+            "route": "surveys/questions/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "survey, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view"],
+                "ADMIN": ["can_view"],
+                "MODERATOR": ["can_view"],
+                "USER": ["can_view"]
+            }
+        }, {
+            "title": "ajax load question form",
+            "description": "ajax load question form",
+            "controller": "Surveys\\Questions\\Code\\Controllers\\QuestionsController::ajaxloadquestionform",
+            "unique_name": "surveys.questions.ajaxloadquestionform",
+            "route": "surveys/questions/ajaxloadquestionform",
+            "permissions": "can_view, can_viewown",
+            "arguments": "",
+            "keywords": "ajax, load, question, form",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view"],
+                "ADMIN": ["can_view"],
+                "MODERATOR": ["can_view"],
+                "USER": ["can_view"]
+            }
+        }, {
+            "title": "ajax add survey question",
+            "description": "ajax add survey question",
+            "controller": "Surveys\\Questions\\Code\\Controllers\\QuestionsController::ajaxaddsurveyquestion",
+            "unique_name": "surveys.questions.ajaxaddsurveyquestion",
+            "route": "surveys/questions/ajaxaddsurveyquestion",
+            "permissions": "can_view, can_viewown",
+            "arguments": "",
+            "keywords": "ajax, add, survey, question",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view"],
+                "ADMIN": ["can_view"],
+                "MODERATOR": ["can_view"],
+                "USER": ["can_view"]
+            }
+        }, {
+            "title": "ajax load question form",
+            "description": "ajax load question form",
+            "controller": "Surveys\\Questions\\Code\\Controllers\\QuestionsController::ajaxaddquestion",
+            "unique_name": "surveys.questions.ajaxaddquestion",
+            "route": "surveys/questions/ajaxaddquestion",
+            "permissions": "can_view, can_viewown",
+            "arguments": "",
+            "keywords": "ajax, add, question",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view"],
+                "ADMIN": ["can_view"],
+                "MODERATOR": ["can_view"],
+                "USER": ["can_view"]
+            }
+        }, {
+            "title": "ajax delete survey question",
+            "description": "ajax delete survey question",
+            "controller": "Surveys\\Questions\\Code\\Controllers\\QuestionsController::ajaxdeletesurveyquestion",
+            "unique_name": "surveys.questions.ajaxdeletesurveyquestion",
+            "route": "surveys/questions/ajaxdeletesurveyquestion",
+            "permissions": "can_view, can_viewown",
+            "arguments": "",
+            "keywords": "ajax, delete, survey, question",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view"],
+                "ADMIN": ["can_view"],
+                "MODERATOR": ["can_view"],
+                "USER": ["can_view"]
+            }
+        }]
+    ,
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Surveys\\Questions\\Code\\Controllers\\Admin\\QuestionsController::taskAction",
+            "unique_name": "admin.surveys.questions.task",
+            "route": "admin/surveys/questions/task",
+            "permissions": "can_write",
+            "arguments": "",
+            "keywords": "questions, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_write"],
+                "ADMIN": ["can_write"]
+            }
+        }, {
+            "title": "Question List",
+            "description": "Management of Questions.",
+            "controller": "Surveys\\Questions\\Code\\Controllers\\Admin\\QuestionsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.surveys.questions",
+            "route": "admin/surveys/questions",
+            "arguments": "",
+            "keywords": "question, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Question",
+            "description": "Add Question .",
+            "controller": "Surveys\\Questions\\Code\\Controllers\\Admin\\QuestionsController::addAction",
+            "unique_name": "admin.surveys.questions.add",
+            "route": "admin/surveys/questions/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "question, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Question {{ item.name }}",
+            "description": "Edit Question {{ item.name }}.",
+            "controller": "Surveys\\Questions\\Code\\Controllers\\Admin\\QuestionsController::editAction",
+            "unique_name": "admin.surveys.questions.edit",
+            "route": "admin/surveys/questions/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "question, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Question Detail: {{ item.name }}",
+            "description": "Question Detail: {{ item.name }}",
+            "controller": "Surveys\\Questions\\Code\\Controllers\\Admin\\QuestionsController::detailAction",
+            "unique_name": "admin.surveys.questions.detail",
+            "route": "admin/surveys/questions/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "question, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Question Delete: {{ item.name }}",
+            "description": "Question Delete: {{ item.name }}",
+            "controller": "Surveys\\Questions\\Code\\Controllers\\Admin\\QuestionsController::deleteAction",
+            "unique_name": "admin.surveys.questions.delete",
+            "route": "admin/surveys/questions/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "question, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Question Save: {{ item.name }}",
+            "description": "Question Save: {{ item.name }}",
+            "controller": "Surveys\\Questions\\Code\\Controllers\\Admin\\QuestionsController::saveAction",
+            "unique_name": "admin.surveys.questions.save",
+            "route": "admin/surveys/questions/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "question, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

@@ -1,0 +1,25 @@
+{# empty Twig template #}
+{% import "form.macro.twig" as forms %}
+
+{{ set_assets('applications/Games/assets/css/game.css') }}
+
+{% set path_set = addTwigPath( "applications.Surveys.generalviews.survey") %}
+
+<h1>{{ item.title }}</h1>
+
+<div class="business-posted-date">
+    <i class="fa fa-clock-o"></i> Posted:  {{ item.date_created|date('d M Y H:i') }} &nbsp;&nbsp;
+</div>
+
+<div>
+    {{ item.description }}
+</div>
+
+
+{% if item.id %}
+    <br>
+    <div class="article-survey-form">
+        {% include "user.survey.twig" ignore missing with {'survey_id': item.id} %}
+    </div>
+{% endif %}
+

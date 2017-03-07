@@ -1,0 +1,38 @@
+{# empty Twig template #}
+
+{% set params = { 'survey_id': survey_id } %}
+
+{% set question_list = callFunction( "Survey.Components.Survey.Models.SurveyModel", 'getSurveyQuestions', params ) %}
+
+<div class="table-responsive">
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th class="text-right">Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% if question_list|length > 0 %}
+                {% for question in question_list %}
+                    <tr>
+                        <td>{{ question.question }}</td>
+                        <td>{{ question.type }}</td>
+                        <td class="text-right">
+                            <a class="btn btn-primary btn-flat btn-xs survey-question-edit" href="{{ friendly_url('app=survey&com=question&subset=question&view=edit&id=' ~ question.id) }}" target="_blank" title="Edit Question">
+                                <i class="fa fa-pencil"></i>
+                            </a>
+
+                            <a class="btn btn-danger btn-flat btn-xs  survey-question-delete" question_id="{{ question.id }}" survey_question_id="{{ question.survey_question_id }}" title="Delete Question">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor%}
+            {% endif%}
+        </tbody>
+    </table>
+</div>

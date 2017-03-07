@@ -1,0 +1,35 @@
+
+<div class="survey-survey-result">
+    <h4>{{ survey.title }}</h4>
+    <input class="survey_id" name="survey[id]" type="hidden" value="{{ survey.id }}" >
+    <div class="survey-questions">
+        {% if survey.questions|length > 0 %}
+            {% for question in survey.questions %}
+                <div class="survey-question">
+                    <b> {{ question.question }}</b><br>
+                    <div class="survey-result-question" question_id="{{ question.id }}" question_chart="{{ question.chart|default('pie') }}" question_title="{{ question.question }}"></div>
+
+                    {% if question.result|length > 0 %}
+                        {% set data = '' %}
+                        {% for key, result in question.result %}
+
+                            {% set data = data ~ "['" ~ result.label ~ "', " ~ result.result ~ "]" %}
+
+                            {% if question.result|length  != (key + 1) %}
+                                {% set data = data ~ "," %}
+                            {% endif %}
+
+                        {% endfor %}
+                    {% endif %}
+
+                    <script>
+                        var survey_result_question_{{ question.id }} = [{{ data|raw }}];
+                    </script>
+                </div>
+
+            {% endfor %}
+        {% endif %}
+
+    </div>
+</div>
+

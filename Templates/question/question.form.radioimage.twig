@@ -1,0 +1,66 @@
+
+<div class="question-radioimage-sample question-text" style="display:none;">
+
+    <b>Radio Image Option</b>
+
+    <div class="table-responsive">
+        <table class="table table-condensed ">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Label</th>
+                    <th>Ans</th>
+                    <th>Del</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if question_params|length > 0 %}
+                    {% for question_param in question_params %}
+                        <tr>
+                            <td class="option-image">
+                                {{ forms.input('image', 'file', null) }}
+                            </td>
+                            <td class="option-label">
+                                {{ forms.input('quiz_params.exist.answer.'~question_param.id~'.', 'text', question_param.label) }}
+                            </td>
+                            <td class="option-answer">
+                                <input type="checkbox" name="form[quiz_params][exist][label][{{ question_param.id }}][]" value="{{ question_param.value }}" {% if question_param.answer != '' %} checked {% endif %}>
+                            </td>
+                            <td>
+                                <a class="btn btn-danger btn-flat btn-xs delete-question-option">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor%}
+                {% endif%}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6">
+                        <a class="add-question-option" question_type="radioimage">
+                            <i class="fa fa-plus"></i> Add Option
+                        </a>
+                    </td>
+                </tr>
+            </tfoot>
+
+        </table>
+    </div>
+
+</div>
+
+<table class="option-radioimage-tr-sample" style="display:none;">
+    <tbody>
+        <tr>
+            <td class="option-image">{{ forms.input('image', 'file', null) }}</td>
+            <td class="option-label">{{ forms.input('question_label', 'text', null) }}</td>
+            <td class="option-answer"><input type="checkbox" value=""></td>
+            <td>
+                <a class="btn btn-danger btn-flat btn-xs delete-question-option">
+                    <i class="fa fa-times"></i>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>

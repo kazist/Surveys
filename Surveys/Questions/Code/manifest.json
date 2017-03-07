@@ -1,0 +1,13 @@
+{
+    "name": "questions",
+    "title": "Surveys Questions",
+    "explanation": "Surveys Questions",
+    "description": "Surveys Questions",
+    "version": 19,
+    "has_view": "1",
+    "tie_field": "0",
+    "email_on_new": "0",
+    "email_on_edit": "0",
+    "email_on_delete": "0",
+    "date_file_modified": "2016-11-14 11:33:27"
+}

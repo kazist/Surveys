@@ -1,0 +1,253 @@
+{
+    "frontend": [{
+            "title": "Survey List",
+            "description": "Management of Surveys.",
+            "controller": "Surveys\\Surveys\\Code\\Controllers\\SurveysController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "surveys.surveys",
+            "route": "surveys/surveys",
+            "arguments": "",
+            "keywords": "survey, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view"],
+                "ADMIN": ["can_view"],
+                "MODERATOR": ["can_view"],
+                "USER": ["can_view"]
+            }
+        }, {
+            "title": "Survey Detail: {{ item.name }}",
+            "description": "Survey Detail: {{ item.name }}",
+            "controller": "Surveys\\Surveys\\Code\\Controllers\\SurveysController::detailAction",
+            "unique_name": "surveys.surveys.detail",
+            "route": "surveys/surveys/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "survey, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view"],
+                "ADMIN": ["can_view"],
+                "MODERATOR": ["can_view"],
+                "USER": ["can_view"]
+            }
+        }, {
+            "title": "ajax load survey form",
+            "description": "ajax load survey form",
+            "controller": "Surveys\\Surveys\\Code\\Controllers\\SurveysController::ajaxloadsurveyformAction",
+            "unique_name": "surveys.surveys.ajaxloadsurveyform",
+            "route": "surveys/surveys/ajaxloadsurveyform",
+            "permissions": "can_view, can_viewown",
+            "arguments": "",
+            "keywords": "ajax, load, survey, form",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view"],
+                "ADMIN": ["can_view"],
+                "MODERATOR": ["can_view"],
+                "USER": ["can_view"]
+            }
+        }, {
+            "title": "ajax save survey",
+            "description": "ajax save survey",
+            "controller": "Surveys\\Surveys\\Code\\Controllers\\SurveysController::ajaxsavesurveyAction",
+            "unique_name": "surveys.surveys.ajaxsavesurvey",
+            "route": "surveys/surveys/ajaxsavesurvey",
+            "permissions": "can_view, can_viewown",
+            "arguments": "",
+            "keywords": "ajax, save, survey",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view"],
+                "ADMIN": ["can_view"],
+                "MODERATOR": ["can_view"],
+                "USER": ["can_view"]
+            }
+        }, {
+            "title": "ajax load result",
+            "description": "ajax load result",
+            "controller": "Surveys\\Surveys\\Code\\Controllers\\SurveysController::ajaxloadresultAction",
+            "unique_name": "surveys.surveys.ajaxloadresult",
+            "route": "surveys/surveys/ajaxloadresult",
+            "permissions": "can_view, can_viewown",
+            "arguments": "",
+            "keywords": "ajax, load, result",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view"],
+                "ADMIN": ["can_view"],
+                "MODERATOR": ["can_view"],
+                "USER": ["can_view"]
+            }
+        }, {
+            "title": "ajax save answers",
+            "description": "ajax save answers",
+            "controller": "Surveys\\Surveys\\Code\\Controllers\\SurveysController::ajaxsaveanswersAction",
+            "unique_name": "surveys.surveys.ajaxsaveanswers",
+            "route": "surveys/surveys/ajaxsaveanswers",
+            "permissions": "can_view, can_viewown",
+            "arguments": "",
+            "keywords": "ajax, save, answers",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view"],
+                "ADMIN": ["can_view"],
+                "MODERATOR": ["can_view"],
+                "USER": ["can_view"]
+            }
+        }, {
+            "title": "ajax save survey",
+            "description": "ajax save survey",
+            "controller": "Surveys\\Surveys\\Code\\Controllers\\SurveysController::ajaxsavesurveyAction",
+            "unique_name": "surveys.surveys.ajaxsavesurvey",
+            "route": "surveys/surveys/ajaxsavesurvey",
+            "permissions": "can_view, can_viewown",
+            "arguments": "",
+            "keywords": "ajax, save, survey",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view"],
+                "ADMIN": ["can_view"],
+                "MODERATOR": ["can_view"],
+                "USER": ["can_view"]
+            }
+        }]
+    ,
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Surveys\\Surveys\\Code\\Controllers\\Admin\\SurveysController::taskAction",
+            "unique_name": "admin.surveys.surveys.task",
+            "route": "admin/surveys/surveys/task",
+            "permissions": "can_write",
+            "arguments": "",
+            "keywords": "surveys, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_write"],
+                "ADMIN": ["can_write"]
+            }
+        }, {
+            "title": "Survey List",
+            "description": "Management of Surveys.",
+            "controller": "Surveys\\Surveys\\Code\\Controllers\\Admin\\SurveysController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.surveys.surveys",
+            "route": "admin/surveys/surveys",
+            "arguments": "",
+            "keywords": "survey, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Survey ",
+            "description": "Add Survey .",
+            "controller": "Surveys\\Surveys\\Code\\Controllers\\Admin\\SurveysController::addAction",
+            "unique_name": "admin.surveys.surveys.add",
+            "route": "admin/surveys/surveys/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "survey, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Survey {{ item.name }}",
+            "description": "Edit Survey {{ item.name }}.",
+            "controller": "Surveys\\Surveys\\Code\\Controllers\\Admin\\SurveysController::editAction",
+            "unique_name": "admin.surveys.surveys.edit",
+            "route": "admin/surveys/surveys/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "survey, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Survey Detail: {{ item.name }}",
+            "description": "Survey Detail: {{ item.name }}",
+            "controller": "Surveys\\Surveys\\Code\\Controllers\\Admin\\SurveysController::detailAction",
+            "unique_name": "admin.surveys.surveys.detail",
+            "route": "admin/surveys/surveys/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "survey, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Survey Delete: {{ item.name }}",
+            "description": "Survey Delete: {{ item.name }}",
+            "controller": "Surveys\\Surveys\\Code\\Controllers\\Admin\\SurveysController::deleteAction",
+            "unique_name": "admin.surveys.surveys.delete",
+            "route": "admin/surveys/surveys/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "survey, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Survey Save: {{ item.name }}",
+            "description": "Survey Save: {{ item.name }}",
+            "controller": "Surveys\\Surveys\\Code\\Controllers\\Admin\\SurveysController::saveAction",
+            "unique_name": "admin.surveys.surveys.save",
+            "route": "admin/surveys/surveys/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "survey, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

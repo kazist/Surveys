@@ -1,0 +1,19 @@
+{
+    "title": "Surveys",
+    "description": "Surveys Advertisement",
+    "alias": "surveys",
+    "icon": "fa-picture-o",
+    "home_link": "surveys\/surveys",
+    "is_core": "1",
+    "menulist": [{
+            "title": "Surveys",
+            "alias": "admin_surveys_surveys",
+            "url": "admin/surveys/surveys",
+            "children": []
+        }, {
+            "title": "Questions",
+            "alias": "admin_surveys_questions",
+            "url": "admin/surveys/questions",
+            "children": []
+        }]
+}

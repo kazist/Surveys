@@ -1,0 +1,183 @@
+{
+    "frontend": [{
+            "title": "Result List",
+            "description": "Management of Results.",
+            "controller": "Surveys\\Surveys\\Results\\Code\\Controllers\\ResultsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "surveys.surveys.results",
+            "route": "surveys/surveys/results",
+            "arguments": "",
+            "keywords": "result, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_viewown"]
+            }
+        }, {
+            "title": "Result Detail: {{ item.name }}",
+            "description": "Result Detail: {{ item.name }}",
+            "controller": "Surveys\\Surveys\\Results\\Code\\Controllers\\ResultsController::detailAction",
+            "unique_name": "surveys.surveys.results.detail",
+            "route": "surveys/surveys/results/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "result, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_viewown"]
+            }
+        }, {
+            "title": "Result Save: {{ item.name }}",
+            "description": "Result Save: {{ item.name }}",
+            "controller": "Surveys\\Surveys\\Results\\Code\\Controllers\\ResultsController::saveAction",
+            "unique_name": "admin.surveys.surveys.results.save",
+            "route": "admin/surveys/surveys/results/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "result, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"],
+                "MODERATOR": ["can_add", "can_writeown"],
+                "USER": ["can_add", "can_writeown"]
+            }
+        }]
+    ,
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Surveys\\Surveys\\Results\\Code\\Controllers\\Admin\\ResultsController::taskAction",
+            "unique_name": "admin.surveys.surveys.results.task",
+            "route": "admin/surveys/surveys/results/task",
+            "permissions": "can_write",
+            "arguments": "",
+            "keywords": "results, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_write"],
+                "ADMIN": ["can_write"]
+            }
+        }, {
+            "title": "Result List",
+            "description": "Management of Results.",
+            "controller": "Surveys\\Surveys\\Results\\Code\\Controllers\\Admin\\ResultsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.surveys.surveys.results",
+            "route": "admin/surveys/surveys/results",
+            "arguments": "",
+            "keywords": "result, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Result",
+            "description": "Add Result.",
+            "controller": "Surveys\\Surveys\\Results\\Code\\Controllers\\Admin\\ResultsController::addAction",
+            "unique_name": "admin.surveys.surveys.results.add",
+            "route": "admin/surveys/surveys/results/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "result, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Result {{ item.name }}",
+            "description": "Edit Result {{ item.name }}.",
+            "controller": "Surveys\\Surveys\\Results\\Code\\Controllers\\Admin\\ResultsController::editAction",
+            "unique_name": "admin.surveys.surveys.results.edit",
+            "route": "admin/surveys/surveys/results/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "result, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Result Detail: {{ item.name }}",
+            "description": "Result Detail: {{ item.name }}",
+            "controller": "Surveys\\Surveys\\Results\\Code\\Controllers\\Admin\\ResultsController::detailAction",
+            "unique_name": "admin.surveys.surveys.results.detail",
+            "route": "admin/surveys/surveys/results/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "result, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Result Delete: {{ item.name }}",
+            "description": "Result Delete: {{ item.name }}",
+            "controller": "Surveys\\Surveys\\Results\\Code\\Controllers\\Admin\\ResultsController::deleteAction",
+            "unique_name": "admin.surveys.surveys.results.delete",
+            "route": "admin/surveys/surveys/results/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "result, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Result Save: {{ item.name }}",
+            "description": "Result Save: {{ item.name }}",
+            "controller": "Surveys\\Surveys\\Results\\Code\\Controllers\\Admin\\ResultsController::saveAction",
+            "unique_name": "admin.surveys.surveys.results.save",
+            "route": "admin/surveys/surveys/results/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "result, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

@@ -1,0 +1,17 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+{{ set_assets('applications/Surveys/assets/css/question.css') }}
+{{ set_assets('applications/Surveys/assets/js/question.js') }}
+
+{% set path_set = addTwigPath( "applications.Surveys.generalviews.question") %}
+{% set questions = callFunction( "Surveys.Questions.Code.Models.QuestionsModel", 'getQuestions' ) %}
+
+
+{{ forms.input('existing_question', 'select', null, null, null, null, null, null, questions) }}
+
+
+<a class="btn btn-success btn-flat btn-xs save-existing-question">Add Question</a>
+
+

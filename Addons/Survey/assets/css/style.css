@@ -1,0 +1,32 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 29, 2015, 4:22:26 PM
+    Author     : sbc
+*/
+.survey-content{
+    list-style: none;
+    padding:0;
+}
+
+.survey-content li{
+    padding:5px;
+}
+
+.survey-content li:hover{
+    background: #F15D22;
+    color:white;
+    transition: background .2s ease-out;
+}
+
+.survey-content li img{
+    margin:5px;
+}
+
+.survey-content li:hover a{
+    color:white;
+}
+

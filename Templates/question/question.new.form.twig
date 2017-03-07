@@ -1,0 +1,33 @@
+{# empty Twig template #}
+{% import "form.macro.twig" as forms %}
+
+{{ set_assets('applications/Survey/Components/assets/css/question.css') }}
+{{ set_assets('applications/Survey/Components/assets/js/question.js') }}
+
+{% set path_set = addTwigPath( "applications.Survey.Components.Templates.question", twig_object) %}
+{% set type = callFunction( "Survey.Components.Question.Models.QuestionModel", 'getQuestionTypes' ) %}
+{% set charts = callFunction( "Survey.Components.Question.Models.QuestionModel", 'getQuestionCharts' ) %}
+
+<div class="question-form">
+
+    <div class="question-sample">
+        {{ forms.input('question', 'text', item.question, 'Question') }}
+        {{ forms.input('type', 'select', item.type, 'Type',null ,null, null, null, type) }}
+        {{ forms.input('chart', 'select', item.chart, 'Chart',null ,null, null, null, charts) }}
+    </div>
+
+    {% include "question.form.radio.twig" ignore missing %}
+    {% include "question.form.radioimage.twig" ignore missing %}
+    {% include "question.form.checkbox.twig" ignore missing %}
+    {% include "question.form.checkboximage.twig" ignore missing %}
+    {% include "question.form.dropdown.twig" ignore missing %}
+    {% include "question.form.text.twig" ignore missing %}
+
+    <a class="btn btn-success btn-flat btn-xs save-new-question">Add Question</a>
+
+</div>
+
+
+
+
+

@@ -1,0 +1,18 @@
+{% set path_set = addTwigPath( "applications.Surveys.generalviews.survey") %}
+
+<b>{{ survey.title }}</b>
+
+<div>
+    {{ survey.description }}
+</div>
+
+
+{% if survey.id %}
+    <br>
+    <div class="article-survey-form">
+        {% include "user.survey.twig" ignore missing with {'survey_id': survey.id} %}
+    </div>
+{% endif %}
+
+
+

@@ -1,0 +1,44 @@
+{# empty Twig template #}
+
+{{ set_assets('applications/Game/Components/assets/css/game.css') }}
+
+<div class="survey-list">
+    <div class="table-responsive">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>No of Takes</th>
+                    <th>Percent Surveyed</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if items|length > 0 %}
+                    {% for item in items %}
+                        <tr>
+                            <td>{{ item.title }}</td>
+                            <td>{{ item.no_of_takes }}</td>
+                            <td>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                                         aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                        <span class="sr-only">70% Complete</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <a class="btn btn-success btn-flat btn-xs" href="{{ friendly_url('app=survey&com=survey&subset=survey&view=detail&id='~ item.id) }}" title="Take Survey {{ item.title }}">Take Survey</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="clr"></div>
+
+{% include "items.pagination.twig"%}
+

@@ -1,0 +1,125 @@
+{
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Surveys\\Surveys\\Questions\\Code\\Controllers\\Admin\\QuestionsController::taskAction",
+            "unique_name": "admin.surveys.surveys.questions.task",
+            "route": "admin/surveys/surveys/questions/task",
+            "permissions": "can_write",
+            "arguments": "",
+            "keywords": "questions, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_write"],
+                "ADMIN": ["can_write"]
+            }
+        }, {
+            "title": "Question List",
+            "description": "Management of Questions.",
+            "controller": "Surveys\\Surveys\\Questions\\Code\\Controllers\\Admin\\QuestionsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.surveys.surveys.questions",
+            "route": "admin/surveys/surveys/questions",
+            "arguments": "",
+            "keywords": "question, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Question  ",
+            "description": "Add Question .",
+            "controller": "Surveys\\Surveys\\Questions\\Code\\Controllers\\Admin\\QuestionsController::addAction",
+            "unique_name": "admin.surveys.surveys.questions.add",
+            "route": "admin/surveys/surveys/questions/add",
+            "permissions": "can_add",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "question, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Question {{ item.name }}",
+            "description": "Edit Question {{ item.name }}.",
+            "controller": "Surveys\\Surveys\\Questions\\Code\\Controllers\\Admin\\QuestionsController::editAction",
+            "unique_name": "admin.surveys.surveys.questions.edit",
+            "route": "admin/surveys/surveys/questions/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "question, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Question Detail: {{ item.name }}",
+            "description": "Question Detail: {{ item.name }}",
+            "controller": "Surveys\\Surveys\\Questions\\Code\\Controllers\\Admin\\QuestionsController::detailAction",
+            "unique_name": "admin.surveys.surveys.questions.detail",
+            "route": "admin/surveys/surveys/questions/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "question, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Question Delete: {{ item.name }}",
+            "description": "Question Delete: {{ item.name }}",
+            "controller": "Surveys\\Surveys\\Questions\\Code\\Controllers\\Admin\\QuestionsController::deleteAction",
+            "unique_name": "admin.surveys.surveys.questions.delete",
+            "route": "admin/surveys/surveys/questions/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "question, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Question Save: {{ item.name }}",
+            "description": "Question Save: {{ item.name }}",
+            "controller": "Surveys\\Surveys\\Questions\\Code\\Controllers\\Admin\\QuestionsController::saveAction",
+            "unique_name": "admin.surveys.surveys.questions.save",
+            "route": "admin/surveys/surveys/questions/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "question, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

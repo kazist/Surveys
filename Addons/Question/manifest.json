@@ -1,0 +1,13 @@
+{
+    "name": "question",
+    "title": "Question Listing",
+    "explanation": "Question Listing",
+    "description": "Question Listing",
+    "version": 18,
+    "has_view": "1",
+    "tie_field": "0",
+    "email_on_new": "0",
+    "email_on_edit": "0",
+    "email_on_delete": "0",
+    "date_file_modified": "2016-04-18 18:22:00"
+}

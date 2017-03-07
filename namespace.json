@@ -1,0 +1,30 @@
+{
+    "SurveysQuestions": {
+        "namespace": "Surveys\\Questions",
+        "controller": "QuestionsController"
+    },
+    "SurveysQuestionsParameters": {
+        "namespace": "Surveys\\Questions\\Parameters",
+        "controller": "ParametersController"
+    },
+    "SurveysQuestionsAnswers": {
+        "namespace": "Surveys\\Questions\\Answers",
+        "controller": "AnswersController"
+    },
+    "SurveysSurveys": {
+        "namespace": "Surveys\\Surveys",
+        "controller": "SurveysController"
+    },
+    "SurveysSurveysQuestions": {
+        "namespace": "Surveys\\Surveys\\Questions",
+        "controller": "QuestionsController"
+    },
+    "SurveysSurveysResults": {
+        "namespace": "Surveys\\Surveys\\Results",
+        "controller": "ResultsController"
+    },
+    "SurveysSurveysUsers": {
+        "namespace": "Surveys\\Surveys\\Users",
+        "controller": "UsersController"
+    }
+}
