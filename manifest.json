@@ -1,9 +1,9 @@
 {
-    "name": "surveys",
+    "name": "kazist/surveys",
     "title": "Surveys and Polls",
     "icon": "icons\/surveys.png",
     "extension": "component",
-    "path": "surveys\/",
+    "path": "applications/Surveys/",
     "description": "Surveys and Polls",
     "version": 1
 }
