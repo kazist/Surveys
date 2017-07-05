@@ -22,7 +22,7 @@
                         <td>{{ question.question }}</td>
                         <td>{{ question.type }}</td>
                         <td class="text-right">
-                            <a class="btn btn-primary btn-flat btn-xs survey-question-edit" href="{{ friendly_url('app=survey&com=question&subset=question&view=edit&id=' ~ question.id) }}" target="_blank" title="Edit Question">
+                            <a class="btn btn-primary btn-flat btn-xs survey-question-edit" href="{{ generate_url('surveys.questions.edit', {'id': question.id}) }}" target="_blank" title="Edit Question">
                                 <i class="fa fa-pencil"></i>
                             </a>
 
