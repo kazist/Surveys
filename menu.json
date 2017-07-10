@@ -2,18 +2,20 @@
     "title": "Surveys",
     "description": "Surveys Advertisement",
     "alias": "surveys",
-    "icon": "fa-picture-o",
+    "icon": "fa fa-pie-chart",
     "home_link": "surveys\/surveys",
     "is_core": "1",
     "menulist": [{
             "title": "Surveys",
             "alias": "admin_surveys_surveys",
             "url": "admin/surveys/surveys",
+            "icon": "fa fa-pie-chart",
             "children": []
         }, {
             "title": "Questions",
             "alias": "admin_surveys_questions",
             "url": "admin/surveys/questions",
+            "icon": "fa fa-question-circle",
             "children": []
         }]
 }
