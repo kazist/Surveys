@@ -4,6 +4,7 @@
     "keywords": ["kazist", "survey manager"],
     "homepage": "https://github.com/kazist/surveys",
     "license": "LGPL-3.0",
+    "version": "1.0.4",
     "authors": [
         {
             "name": "Dedan Irungu",
