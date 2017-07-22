@@ -4,6 +4,7 @@
     "alias": "surveys",
     "icon": "fa fa-pie-chart",
     "home_link": "surveys\/surveys",
+    "path": "applications/Surveys",
     "is_core": "1",
     "menulist": [{
             "title": "Surveys",
